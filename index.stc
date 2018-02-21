@@ -1,0 +1,34 @@
+SYNOPSIS:
+	The Big Data concept describes the addition of new data, but prohibits the removal data.
+	This statement excludes the task of defragmentation.
+	Any data can be considered either as a fixed-width type or as a text string.
+	Fixed-width data storage is very easy: all we need to do is specify type of each column and stream raw data.
+	With the length of the line it's easy to select any line from the stream.
+	And any line is divided into columns also easily.
+	Text data is a point.
+	In cases of tables with text values fixed-width conception doesn't work.
+	The most obvious solution is match each string with a number.
+	Replacing problem string by a fixed-width number fully solves the problem.
+	Hence the first task is to develop a type for enumerate strings.
+	And second task is to develop a type to storage fixed-width tables. 
+TASK:
+	1)
+		Develop a CLI program.
+		The program must execute follow commands:
+		 * load <filename> - load a tree of strings from file;
+		 * save <filename> - save current tree to file;
+		 * add <parent1[, ...]> -s <string> - add new string to tree as a child to specified by number;
+		 * ls <number> - listing all nearby strings to specified by number.
+		Without load and after save commands program must use an empty tree.
+	2)
+		Develop a CLI program.
+		This program must create a user defined table.
+		Before inserting records user must specify number and types of columns.
+		For each text column it's necessary to specify a string whose child elements may be selected as values.
+		Same as the first program it must save and load the table from the file.
+	3)
+		Develop a program.
+		This program must load table from file and perform analytical processing such as:
+		 * select and reorder columns;
+		 * arithmetic operations;
+		 * select records corresponding to user's condition.
